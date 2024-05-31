@@ -1,6 +1,5 @@
 package org.example;
 
-import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -39,22 +38,6 @@ public class CatalogoBibliotecario {
                 .map(elemento -> (Libro) elemento)
                 .filter(libro -> libro.getAutore().equalsIgnoreCase(autore))
                 .collect(Collectors.toList());
-    }
-
-    public void salvaSuDisco(String filePath) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filePath))) {
-            oos.writeObject(catalogo);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void caricaDaDisco(String filePath) {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filePath))) {
-            catalogo = (List<ElementoCatalogo>) ois.readObject();
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
     }
 
     @Override

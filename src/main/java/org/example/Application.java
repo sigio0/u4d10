@@ -34,14 +34,5 @@ public class Application {
         catalogo.rimuoviElemento("1234567890");
         System.out.println("Catalogo dopo rimozione:");
         System.out.println(catalogo);
-
-        // Salvataggio su disco
-        catalogo.salvaSuDisco("catalogo.dat");
-
-        // Caricamento da disco
-        CatalogoBibliotecario nuovoCatalogo = new CatalogoBibliotecario();
-        nuovoCatalogo.caricaDaDisco("catalogo.dat");
-        System.out.println("Nuovo catalogo caricato da disco:");
-        System.out.println(nuovoCatalogo);
     }
 }
